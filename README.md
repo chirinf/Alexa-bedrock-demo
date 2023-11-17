@@ -1,6 +1,6 @@
 # Alexa Skill for Image Generation with Amazon Bedrock
 
-## B) Create S3 Bucket:
+## A) Create S3 Bucket:
     1.- Go to AWS Console and create a new bucket.
 
 ## B) Create Lambda Layers:
