@@ -149,7 +149,11 @@ def get_progressive_response(handler_input):
         
         #Signed URL
         
-        url = boto3.client('s3').generate_presigned_url(
+        from botocore.client import Config
+        
+        config=Config(signature_version="s3v4")
+
+        url = boto3.client(service_name='s3', region_name='us-east-1', config=config).generate_presigned_url(
         ClientMethod='get_object', 
         Params={'Bucket': bucket_name , 'Key': s3_path},
         ExpiresIn=180)
